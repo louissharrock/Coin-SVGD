@@ -1,3 +1,13 @@
+# Results and Plots
+/results
+/plots
+
+# Python Scripts
+toy_svgd.py
+
+# IDE metadata
+**.idea/**
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
