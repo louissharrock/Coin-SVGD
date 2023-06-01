@@ -14,14 +14,15 @@ can be found in ``main.py``.
 
 ## Experiments
 
-The results in the paper can be reproduced using the various python notebooks.
+For examples of how to use the code on the various models considered in the paper, 
+see the notebooks below.
 
 |        File         | Example                                     |
 |:-------------------:|:--------------------------------------------|
 | ``toy_svgd.ipynb``  | Toy examples.                               |
 | ``bayes_ica.ipynb`` | Bayesian independent component analysis.    |
 | ``bayes_lr.ipynb``  | Bayesian logistic regression.               |
-|    Coming soon.     | Bayesian neural network.                    |
+|  ``bayes_nn.ipynb``   | Bayesian neural network.                    |
 |    Coming soon.     | Bayesian probabilistic matrix factorisaton. |
 
 ## Citation
@@ -48,3 +49,8 @@ of the following papers for their open source code:
 * S. Chewi, T. Le Gouic, C. Lu, T. Maunu, P. Rigollet. SVGD as a kernelized Wasserstein gradient flow of the chi-squared divergence. NeurIPS, 2020. [[Paper](https://arxiv.org/abs/2006.02509)] | [[Code](https://github.com/twmaunu/LAWGD)].
 * A. Korba, P.-C. Aubin-Frankowski, S. Majewski, P. Ablin. ICML 2021. [[Paper](https://arxiv.org/abs/2105.09994)] | [[Code](https://github.com/pierreablin/ksddescent)].
 
+We did not contribute any of the datasets used in our experiments. Please get in touch if 
+there are any conflicts of interest or other issues with hosting these datasets here.
+* The Covertype dataset used in ``bayes_lr.ipynb`` is from the [LIBSVM Data Repository](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html).
+* The datasets used in ``bayes_nn.ipynb`` are from the [UCI Machine Learning Repositorry](https://archive.ics.uci.edu/ml/index.php). 
+* The MovieLens dataset used in ``bayes_pmf.ipynb`` is from [GroupLens](https://grouplens.org/datasets/movielens/).
