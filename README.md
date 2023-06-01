@@ -17,13 +17,13 @@ can be found in ``main.py``.
 For examples of how to use the code on the various models considered in the paper, 
 see the notebooks below.
 
-|        File         | Example                                     |
-|:-------------------:|:--------------------------------------------|
-| ``toy_svgd.ipynb``  | Toy examples.                               |
-| ``bayes_ica.ipynb`` | Bayesian independent component analysis.    |
-| ``bayes_lr.ipynb``  | Bayesian logistic regression.               |
-|  ``bayes_nn.ipynb``   | Bayesian neural network.                    |
-|    Coming soon.     | Bayesian probabilistic matrix factorisaton. |
+|                                             File                                              | Example                                     |
+|:---------------------------------------------------------------------------------------------:|:--------------------------------------------|
+|   [``toy_svgd.ipynb``](https://github.com/louissharrock/Coin-SVGD/blob/main/toy_svgd.ipynb)   | Toy examples.                               |
+| [``bayes_ica.ipynb``]((https://github.com/louissharrock/Coin-SVGD/blob/main/bayes_ica.ipynb)) | Bayesian independent component analysis.    |
+|  [``bayes_lr.ipynb``]((https://github.com/louissharrock/Coin-SVGD/blob/main/bayes_lr.ipynb))  | Bayesian logistic regression.               |
+|  [``bayes_nn.ipynb``]((https://github.com/louissharrock/Coin-SVGD/blob/main/bayes_nn.ipynb))  | Bayesian neural network.                    |
+| [``bayes_pmf.ipynb``]((https://github.com/louissharrock/Coin-SVGD/blob/main/bayes_pmf.ipynb)) | Bayesian probabilistic matrix factorisaton. |
 
 ## Citation
 

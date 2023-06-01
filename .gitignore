@@ -1,6 +1,7 @@
 # Results and Plots
 /results
 /plots
+/data/year.csv
 
 # Python Scripts
 toy_svgd.py
