@@ -53,7 +53,7 @@ class CoinSVGD:
 
         return kxy, dx_kxy
 
-    def svgd_update(self, theta0, ln_prob_grad, n_iter=1000, stepsize=1e-3, bandwidth=-1, alpha=0.9, adagrad=True):
+    def svgd_update(self, theta0, ln_prob_grad, n_iter=1000, stepsize=1e-3, bandwidth=-1, alpha=0.9, adagrad=False):
         """
         SVGD
 

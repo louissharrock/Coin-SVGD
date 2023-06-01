@@ -4,6 +4,7 @@
 
 # Python Scripts
 toy_svgd.py
+bayesian_ica.py
 
 # IDE metadata
 **.idea/**
