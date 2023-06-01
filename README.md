@@ -16,13 +16,13 @@ can be found in ``main.py``.
 
 The results in the paper can be reproduced using the various python notebooks.
 
-|             File              | Example                                     |
-|:-----------------------------:|:--------------------------------------------|
-|      ``toy_svgd.ipynb``       | Toy examples.                               |
+|        File         | Example                                     |
+|:-------------------:|:--------------------------------------------|
+| ``toy_svgd.ipynb``  | Toy examples.                               |
 | ``bayes_ica.ipynb`` | Bayesian independent component analysis.    |
-|         Coming soon.          | Bayesian logistic regression.               |
-|         Coming soon.          | Bayesian neural network.                    |
-|         Coming soon.          | Bayesian probabilistic matrix factorisaton. |
+| ``bayes_lr.ipynb``  | Bayesian logistic regression.               |
+|    Coming soon.     | Bayesian neural network.                    |
+|    Coming soon.     | Bayesian probabilistic matrix factorisaton. |
 
 ## Citation
 
