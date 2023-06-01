@@ -9,13 +9,11 @@
 
 This repository contains code to implement the coin sampling algorithms 
 described in [Sharrock et al. (2023)](https://arxiv.org/abs/2301.11294). The 
-basic implementation of the algorithms - Coin SVGD, Coin LAWGD, and Coin KSDD - 
-can be found in ``main.py``. 
+basic implementation of the algorithms (e.g., Coin SVGD)
+can be found in [``main.py``](https://github.com/louissharrock/Coin-SVGD/blob/main/main.py). 
 
-## Experiments
-
-For examples of how to use the code on the various models considered in the paper, 
-see the notebooks below.
+## Example Usage
+For some examples of how to use the code for the variou models considered in our paper, see the notebooks below.
 
 |                                            File                                             | Example                                     |
 |:-------------------------------------------------------------------------------------------:|:--------------------------------------------|
