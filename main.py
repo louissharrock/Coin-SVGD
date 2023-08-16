@@ -125,7 +125,7 @@ class CoinSVGD:
         Coin SVGD
 
         Inputs:
-            x0: initial particle positions
+            theta0: initial particle positions
             ln_prob_grad: gradient of log-probability of the target
             n_iter: number of iterations
             bandwidth: bandwidth for kernel
@@ -660,17 +660,18 @@ class CoinLAWGD:
             return x
 
 
-class SGLD:
+class CoinSGLD:
     """
     Stochastic Gradient Langevin Dynamics.
     """
     def __init__(self, batch=True):
         self.batch = batch
 
-    def update(self, theta0, score, dt, n_iter):
-        # Check input
+    def sgld_update(self, theta0, score, dt, n_iter):
+
+        # check input
         if theta0 is None or score is None:
-            raise ValueError('x0 or ln_prob_grad cannot be None')
+            raise ValueError('theta0 or ln_prob_grad cannot be None')
 
         # initial theta
         theta = np.copy(theta0)
@@ -693,6 +694,65 @@ class SGLD:
                     grad_theta[k, :] = score(theta[k, :])
 
             theta = theta + dt * grad_theta + w[t, :, :]
+
+            all_theta.append(np.copy(theta))
+
+        return all_theta
+
+    def coin_update(self, theta0, score, n_iter):
+
+        # check input
+        if theta0 is None or score is None:
+            raise ValueError('theta0 or ln_prob_grad cannot be None')
+
+        # initial theta
+        theta = np.copy(theta0)
+        theta0 = np.copy(theta0)
+
+        # all theta
+        all_theta = list()
+        all_theta.append(theta0)
+
+        # initialise other vars
+        L = 1e-10
+        grad_theta_sum = 0
+        reward = 0
+        abs_grad_theta_sum = 0
+
+        for t in range(n_iter):
+
+            # calculate grad log density
+            if self.batch:
+                ln_p_grad = score(theta)
+            else:
+                ln_p_grad = np.zeros_like(theta)
+                for k in range(theta.shape[0]):
+                    ln_p_grad[k, :] = score(theta[k, :])
+
+            # gradient
+            grad_theta = ln_p_grad
+
+            # |gradient|
+            abs_grad_theta = abs(grad_theta)
+
+            # constant
+            L = np.maximum(abs_grad_theta, L)
+
+            # sum of gradients
+            grad_theta_sum += grad_theta
+            abs_grad_theta_sum += abs_grad_theta
+
+            # 'reward'
+            reward = np.maximum(reward + np.multiply(theta - theta0, grad_theta), 0)
+
+            # theta update
+            theta_tmp = theta0 + grad_theta_sum / (L * (abs_grad_theta_sum + L)) * (L + reward)
+
+            # effective lr
+            eps = (theta_tmp - theta)/(ln_p_grad+1e-16)
+
+            # add noise
+            theta = theta + eps * ln_p_grad + np.sqrt(2*abs(eps)) * np.random.normal(0, 1, theta.shape)
 
             all_theta.append(np.copy(theta))
 
